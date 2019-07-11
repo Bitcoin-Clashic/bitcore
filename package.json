@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "async": "^2.5.0",
-    "bcoin": "bitpay/bcoin#v1.0.0-beta.14+cash",
+    "bcoin": "title-network/bcoin",
     "bitcoind-rpc": "^0.6.0",
     "bitcore-lib": "title-network/bitcore-lib",
     "bitcore-p2p": "title-network/bitcore-p2p",
