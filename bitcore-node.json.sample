@@ -1,5 +1,5 @@
 {
-  "network": "testnet",
+  "network": "livenet",
   "port": 3001,
   "datadir": "/tmp",
   "services": [
@@ -13,13 +13,28 @@
     "timestamp",
     "fee",
     "insight-api",
+    "insight-ui",
     "web"
   ],
   "servicesConfig": {
     "insight-api": {
-      "routePrefix": "api",
       "disableRateLimiter": true,
-      "enableCache": true
+      "enableCache": true,
+      "x_apiPrefix": "api",
+      "x_routePrefix": ""
+    },
+    "insight-ui": {
+      "x_apiPrefix": "api"
+    },
+    "p2p": {
+      "peers": [
+        {
+          "ip": {
+            "v4": "127.0.0.1"
+          },
+          "port": 10333
+        }
+      ]
     },
     "fee": {
       "rpc": {
@@ -27,7 +42,11 @@
         "pass": "local",
         "host": "localhost",
         "protocol": "http",
-        "port": 18332
+        "port": 10332
+        "zmqpubrawtx":"tcp://127.0.0.1:38832",
+        "zmqpubhashtx":"tcp://127.0.0.1:38833",
+        "zmqpubhashblock":"tcp://127.0.0.1:38834",
+        "zmqpubrawblock":"tcp://127.0.0.1:38835"
       }
     }
   }
